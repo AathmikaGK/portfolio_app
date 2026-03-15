@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal portfolio for a software engineer featuring selected projects and practical experience."
+    />
+    <title>Alex Carter | Software Engineer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="container nav">
+        <a class="brand" href="#top">Alex Carter</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="toggle-label">Dark mode</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <p class="eyebrow">Software Engineer</p>
+        <h1>Building useful products with clear code and simple design.</h1>
+        <p class="hero-copy">
+          I focus on backend systems, practical tooling, and clean interfaces people can use right away.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View projects</a>
+          <a class="button" href="#contact">Get in touch</a>
+        </div>
+      </section>
+
+      <section class="container section" id="about">
+        <h2>About</h2>
+        <p>
+          I’m a software engineer who likes solving real problems. I care about good architecture,
+          readable code, and products that stay fast as they grow.
+        </p>
+      </section>
+
+      <section class="container section" id="projects">
+        <div class="section-header">
+          <h2>Selected projects</h2>
+          <p>Filter by stack:</p>
+        </div>
+        <div class="filters" role="group" aria-label="Project filters">
+          <button class="filter-button active" data-filter="all">All</button>
+          <button class="filter-button" data-filter="ai">AI</button>
+          <button class="filter-button" data-filter="api">API</button>
+          <button class="filter-button" data-filter="python">Python</button>
+          <button class="filter-button" data-filter="javascript">JavaScript</button>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <article class="project-card" data-stack="ai python javascript">
+            <h3>AI Planner & Learning Assistant</h3>
+            <p>
+              A planning workspace that turns goals into weekly study tasks, then adapts schedules as priorities change.
+            </p>
+            <ul>
+              <li>Natural language planning flow</li>
+              <li>Progress dashboard with daily focus blocks</li>
+              <li>Reminder system with practical feedback loops</li>
+            </ul>
+          </article>
+
+          <article class="project-card" data-stack="api python">
+            <h3>Video to Audio Transcoder API</h3>
+            <p>
+              REST API that receives video uploads, extracts audio, and returns downloadable files with job tracking.
+            </p>
+            <ul>
+              <li>Asynchronous processing queue</li>
+              <li>Rate limiting and signed file URLs</li>
+              <li>Structured logging and health checks</li>
+            </ul>
+          </article>
+
+          <article class="project-card" data-stack="javascript api">
+            <h3>Quiz Master</h3>
+            <p>
+              Lightweight quiz platform for timed rounds, instant scoring, and topic-based question sets.
+            </p>
+            <ul>
+              <li>Live score updates</li>
+              <li>Responsive game controls</li>
+              <li>Admin question import tool</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section" id="contact">
+        <h2>Contact</h2>
+        <p>If you’re building something thoughtful and useful, I’d like to hear about it.</p>
+        <a class="email-link" href="mailto:alex@carter.dev">alex@carter.dev</a>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <p>© <span id="year"></span> Alex Carter</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
