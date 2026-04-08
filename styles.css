@@ -47,7 +47,7 @@ section,
 .button,
 .floating-nav,
 .floating-nav-item,
-.timeline-item,
+.timeline-card,
 .volunteering-item {
   transition: transform 180ms ease, box-shadow 220ms ease, border-color 200ms ease, background 200ms ease;
 }
@@ -192,35 +192,45 @@ section,
   position: relative;
   margin-top: 1.4rem;
   display: grid;
-  gap: 1rem;
-  padding-left: 1.3rem;
+  gap: 1.1rem;
+  grid-template-columns: 1fr 1fr;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  left: 0.35rem;
-  top: 0.25rem;
-  bottom: 0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0.2rem;
+  bottom: 0.2rem;
   width: 2px;
-  background: linear-gradient(to bottom, var(--accent), color-mix(in srgb, var(--accent) 25%, transparent));
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--accent) 80%, #fff 20%), color-mix(in srgb, var(--accent) 25%, transparent));
 }
 
-.timeline-item {
+.timeline-card {
   --zoom-factor: 1;
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 1rem 1rem 1rem 1.2rem;
+  padding: 1rem;
   background: color-mix(in srgb, var(--surface) 96%, transparent);
   position: relative;
   transform: scale(var(--zoom-factor));
-  transform-origin: left center;
+  box-shadow: var(--shadow);
 }
 
-.timeline-item::before {
+.timeline-card:nth-child(odd) {
+  grid-column: 1;
+  margin-right: 1.2rem;
+}
+
+.timeline-card:nth-child(even) {
+  grid-column: 2;
+  margin-left: 1.2rem;
+}
+
+.timeline-card::before {
   content: "";
   position: absolute;
-  left: -1.33rem;
   top: 1.2rem;
   width: 0.7rem;
   height: 0.7rem;
@@ -229,34 +239,46 @@ section,
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
-.timeline-date {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 0.35rem;
+.timeline-card:nth-child(odd)::before {
+  right: -1.62rem;
 }
 
-.timeline-item h3 {
-  margin: 0 0 0.45rem;
+.timeline-card:nth-child(even)::before {
+  left: -1.62rem;
+}
+
+.timeline-pill {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #7a2fff, #4f6cff);
+  border-radius: 999px;
+  padding: 0.28rem 0.72rem;
+}
+
+.timeline-card h3 {
+  margin: 0;
   font-size: 1.06rem;
 }
 
-.timeline-item h3 span {
+.timeline-card h3 span {
   color: var(--muted);
   font-weight: 500;
 }
 
 .timeline-text {
-  margin: 0.45rem 0 0;
+  margin: 0.5rem 0 0;
   transition: transform 160ms ease, color 160ms ease;
 }
 
-.timeline-item.is-active {
+.timeline-card.is-active {
   border-color: var(--accent);
   box-shadow: var(--glow);
 }
 
-.timeline-item.is-active .timeline-text {
+.timeline-card.is-active .timeline-text {
   transform: scale(1.02);
   color: color-mix(in srgb, var(--text) 88%, var(--accent) 12%);
 }
@@ -359,8 +381,28 @@ section,
     padding-left: 1rem;
   }
 
-  .timeline-item::before {
-    left: -1.02rem;
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline::before {
+    left: 0.45rem;
+    transform: none;
+  }
+
+  .timeline-card,
+  .timeline-card:nth-child(odd),
+  .timeline-card:nth-child(even) {
+    grid-column: 1;
+    margin-left: 1.3rem;
+    margin-right: 0;
+  }
+
+  .timeline-card::before,
+  .timeline-card:nth-child(odd)::before,
+  .timeline-card:nth-child(even)::before {
+    left: -1.62rem;
+    right: auto;
   }
 }
 
