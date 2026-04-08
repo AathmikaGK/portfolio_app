@@ -17,14 +17,12 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    
-
     <main>
       <section class="hero container" id="top">
         <p class="eyebrow">Software Engineering Student</p>
         <h1>Building AI-integrated systems and cloud-native infrastructure.</h1>
         <p class="hero-copy">
-          Third-year Software Engineering student at QUT. I bridge the gap between backend architecture and adaptive AI integration
+          Third-year Software Engineering student at QUT. I bridge the gap between backend architecture and adaptive AI integration.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#projects">View projects</a>
@@ -42,22 +40,11 @@
       <section class="container section" id="projects">
         <div class="section-header">
           <h2>Selected projects</h2>
-          <p>Filter by stack:</p>
-        </div>
-        <div class="filters" role="group" aria-label="Project filters">
-          <button class="filter-button active" data-filter="all">All</button>
-          <button class="filter-button" data-filter="ai">AI</button>
-          <button class="filter-button" data-filter="api">API</button>
-          <button class="filter-button" data-filter="python">Python</button>
-          <button class="filter-button" data-filter="javascript">JavaScript</button>
+          <p>Recent builds across AI, backend APIs, and product delivery.</p>
         </div>
 
         <div class="project-grid" id="project-grid">
-          <!--
-            Add each project's GitHub URL to the "View on GitHub" button href below.
-            For new projects, copy a full <article class="project-card"> block and update the button link.
-          -->
-          <article class="project-card" data-stack="AI Python Typescript Langchain RAG">
+          <article class="project-card">
             <h3>AI Planner & Learning Assistant</h3>
             <p>
               A RAG-based chatbot designed to answer questions based on the learning materials uploaded by the user.
@@ -70,7 +57,7 @@
             <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
           </article>
 
-          <article class="project-card" data-stack="API Python AWS">
+          <article class="project-card">
             <h3>Video to Audio Transcoder API</h3>
             <p>
               REST API that receives video uploads, extracts audio, and returns downloadable files with job tracking.
@@ -83,30 +70,81 @@
             <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
           </article>
 
-          <article class="project-card" data-stack="Java AI ">
+          <article class="project-card">
             <h3>Quiz Master</h3>
             <p>
               Lightweight quiz platform for timed rounds, instant scoring, and topic-based question sets.
             </p>
             <ul>
               <li>Live score updates</li>
-              <li>Learboard</li>
-              <li>AI poweres quiz creation tool</li>
+              <li>Leaderboard</li>
+              <li>AI-powered quiz creation tool</li>
             </ul>
             <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
           </article>
 
-          <article class="project-card" data-stack="AI API Python FastAPI Bootstrap">
+          <article class="project-card">
             <h3>Safeguard AI — Tanda Hackathon</h3>
             <p>
-              Python · FastAPI · Bootstrap 5 · Anthropic Claude API
+              Python · FastAPI · Bootstrap 5 · Anthropic Claude API.
             </p>
             <ul>
               <li>Built and demoed a prompt-injection scanner in 24 hours.</li>
-              <li>A single POST request returns a risk score out of 100, flagged issues, and a rewritten safe prompt via the Claude API.</li>
-              <li>Learned the API under time pressure and shipped a working demo on the day.</li>
+              <li>Single POST returns risk score, flagged issues, and safer rewritten prompt.</li>
+              <li>Shipped a working demo under tight time pressure.</li>
             </ul>
             <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section" id="journey">
+        <h2>My Journey</h2>
+        <p>Work experience shown newest first.</p>
+        <div class="timeline" aria-label="Work experience timeline">
+          <article class="timeline-item" data-timeline-zoom>
+            <div class="timeline-date">Jun 2025 — Present</div>
+            <h3>Customer Service Executive <span>| Remox Currency Exchange</span></h3>
+            <p class="timeline-text">
+              Process foreign currency transactions and advise customers on exchange rates; maintained a clean cash-handling record across all shifts while managing high-volume periods.
+            </p>
+          </article>
+
+          <article class="timeline-item" data-timeline-zoom>
+            <div class="timeline-date">Jan 2024 — Present</div>
+            <h3>Private Freelance Tutor <span>| SuperProf</span></h3>
+            <p class="timeline-text">
+              Tutor 10+ students weekly in Python, Java, maths, and engineering; design personalised lesson plans and coding exercises tailored to each learner. Most show measurable grade improvements within one semester.
+            </p>
+            <p class="timeline-text">
+              The same communication skills transfer directly into team code reviews and technical presentations.
+            </p>
+          </article>
+
+          <article class="timeline-item" data-timeline-zoom>
+            <div class="timeline-date">Jul 2023 — Jun 2025</div>
+            <h3>Team Member <span>| Pizza Hut & Noodle Box</span></h3>
+            <p class="timeline-text">
+              Balanced part-time work through two years of a full engineering degree, building time-management habits and reliability under competing deadlines.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section" id="volunteering">
+        <h2>Volunteering & Leadership</h2>
+        <div class="volunteering-list">
+          <article class="volunteering-item">
+            <h3>Event Facilitator <span>| QUT Connect</span></h3>
+            <p>
+              Ran QUT 101 orientation for incoming students, guiding a full cohort through university systems and helping them settle in confidently.
+            </p>
+          </article>
+          <article class="volunteering-item">
+            <h3>Volunteer <span>| QUT Guild</span></h3>
+            <p>
+              Organised Welcome Week activities helping new students connect and feel at ease during their first days on campus.
+            </p>
           </article>
         </div>
       </section>
@@ -129,7 +167,8 @@
     <nav class="floating-nav" aria-label="Quick navigation">
       <a class="floating-nav-item" href="#top" aria-label="Home">⌂ <span>Home</span></a>
       <a class="floating-nav-item" href="#about">About</a>
-      <a class="floating-nav-item" href="#projects">Portfolio</a>
+      <a class="floating-nav-item" href="#projects">Projects</a>
+      <a class="floating-nav-item" href="#journey">Journey</a>
       <a class="floating-nav-item floating-nav-cta" href="#contact">Contact me</a>
     </nav>
 
