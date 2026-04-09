@@ -55,17 +55,12 @@ section,
 .section,
 .hero {
   position: relative;
-  border: 1px solid color-mix(in srgb, var(--line) 84%, transparent);
-  border-radius: 18px;
-  margin-top: 1rem;
-  padding-inline: clamp(1rem, 2.5vw, 2rem);
-  background: color-mix(in srgb, var(--surface) 90%, transparent);
-  box-shadow: var(--shadow);
-}
-
-.section:hover,
-.hero:hover {
-  box-shadow: var(--glow);
+  margin-top: 1.2rem;
+  padding-inline: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .hero {
@@ -122,7 +117,7 @@ section,
 }
 
 .section {
-  padding: 2.6rem 0;
+  padding: 2.2rem 0;
 }
 
 .section h2 {
