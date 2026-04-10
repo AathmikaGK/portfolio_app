@@ -120,6 +120,11 @@ section,
   padding: 2.2rem 0;
 }
 
+#journey {
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+}
+
 .section h2 {
   margin-top: 0;
   margin-bottom: 0.8rem;
@@ -186,7 +191,7 @@ section,
   position: relative;
   margin-top: 1.4rem;
   display: grid;
-  gap: 1.1rem;
+  gap: 1.8rem;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -268,8 +273,8 @@ section,
 }
 
 .timeline-card.is-active {
-  border-color: var(--accent);
-  box-shadow: var(--glow);
+  border: 0;
+  box-shadow: none;
 }
 
 .timeline-card.is-active .timeline-text {
@@ -288,6 +293,7 @@ section,
   border-radius: 0;
   padding: 0.95rem 0;
   background: transparent;
+  box-shadow: none;
 }
 
 .volunteering-item h3 {
