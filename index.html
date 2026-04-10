@@ -1,155 +1,106 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Personal portfolio for a software engineer featuring selected projects and practical experience."
-    />
-    <title>Aathmika Gokula Krishna | Aspiring Software Engineer</title>
+    <meta name="description" content="Aathmika Gokula Krishna | Software Engineer Portfolio" />
+    <title>Aathmika Gokula Krishna | Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header class="site-nav container" id="top">
+      <a class="brand" href="#top">Aathmika Gokula Krishna</a>
+      <nav class="top-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </header>
+
     <main>
-      <section class="hero container" id="top">
-        <p class="eyebrow">Software Engineering Student</p>
-        <h1>Building AI-integrated systems and cloud-native infrastructure.</h1>
-        <p class="hero-copy">
-          Third-year Software Engineering student at QUT. I bridge the gap between backend architecture and adaptive AI integration.
+      <section class="hero container">
+        <div>
+          <p class="eyebrow">Hi, I build reliable systems and practical AI products.</p>
+          <h1>Software<br />Engineer</h1>
+        </div>
+        <p class="hero-note">
+          I design and ship backend-first products with cloud-native architecture, AI integrations, and scalable APIs.
         </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projects">View projects</a>
-          <a class="button" href="#contact">Get in touch</a>
+      </section>
+
+      <section class="stack-loop" aria-label="Tech stack loop">
+        <div class="stack-viewport" id="stack-viewport">
+          <div class="stack-track" id="stack-track">
+            <span class="stack-chip">Python</span>
+            <span class="stack-chip">Java</span>
+            <span class="stack-chip">C#</span>
+            <span class="stack-chip">LangChain</span>
+            <span class="stack-chip">RAG</span>
+            <span class="stack-chip">AWS</span>
+            <span class="stack-chip">Docker</span>
+            <span class="stack-chip">Git</span>
+            <span class="stack-chip">FastAPI</span>
+          </div>
         </div>
       </section>
 
       <section class="container section" id="about">
         <h2>About</h2>
         <p>
-          I specialise in cloud-native systems, AI/ML, and full-stack development. Built and deployed production-grade projects using Python, LangChain, AWS, Java, and FastAPI.
+          Third-year Software Engineering student at QUT, focused on backend systems, AI/ML integration, and clean full-stack delivery.
         </p>
       </section>
 
       <section class="container section" id="projects">
-        <div class="section-header">
-          <h2>Selected projects</h2>
-          <p>Recent builds across AI, backend APIs, and product delivery.</p>
-        </div>
-
-        <div class="project-grid" id="project-grid">
-          <article class="project-card">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <article>
             <h3>AI Planner & Learning Assistant</h3>
-            <p>
-              A RAG-based chatbot designed to answer questions based on the learning materials uploaded by the user.
-            </p>
-            <ul>
-              <li>Natural language planning flow</li>
-              <li>Progress dashboard with daily focus blocks</li>
-              <li>Reminder system with practical feedback loops</li>
-            </ul>
-            <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <p>RAG chatbot for course-material grounded Q&A and study planning.</p>
           </article>
-
-          <article class="project-card">
+          <article>
             <h3>Video to Audio Transcoder API</h3>
-            <p>
-              REST API that receives video uploads, extracts audio, and returns downloadable files with job tracking.
-            </p>
-            <ul>
-              <li>Asynchronous processing queue</li>
-              <li>Rate limiting and signed file URLs</li>
-              <li>Structured logging and health checks</li>
-            </ul>
-            <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <p>Async upload/transcode API with tracking and secured file delivery.</p>
           </article>
-
-          <article class="project-card">
+          <article>
             <h3>Quiz Master</h3>
-            <p>
-              Lightweight quiz platform for timed rounds, instant scoring, and topic-based question sets.
-            </p>
-            <ul>
-              <li>Live score updates</li>
-              <li>Leaderboard</li>
-              <li>AI-powered quiz creation tool</li>
-            </ul>
-            <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </article>
-
-          <article class="project-card">
-            <h3>Safeguard AI — Tanda Hackathon</h3>
-            <p>
-              Python · FastAPI · Bootstrap 5 · Anthropic Claude API.
-            </p>
-            <ul>
-              <li>Built and demoed a prompt-injection scanner in 24 hours.</li>
-              <li>Single POST returns risk score, flagged issues, and safer rewritten prompt.</li>
-              <li>Shipped a working demo under tight time pressure.</li>
-            </ul>
-            <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <p>Timed quiz platform with scoring and AI-powered quiz generation.</p>
           </article>
         </div>
       </section>
 
       <section class="container section" id="journey">
         <h2>Work Experience</h2>
-        <p>Timeline view of experience highlights.</p>
-        <div class="timeline" aria-label="Work experience timeline">
-          <article class="timeline-card" data-timeline-zoom>
-            <span class="timeline-pill">Jan 2024 — Present</span>
+        <div class="timeline">
+          <article>
             <h3>Private Freelance Tutor <span>| SuperProf</span></h3>
-            <p class="timeline-text">
-              Tutor 10+ students weekly in Python, Java, maths, and engineering; design personalised lesson plans and coding exercises tailored to each learner, with measurable grade improvements for most students within one semester.
-            </p>
-            <p class="timeline-text">Same communication strength applies in code reviews and technical presentations.</p>
+            <p>Jan 2024 — Present</p>
           </article>
-
-          <article class="timeline-card" data-timeline-zoom>
-            <span class="timeline-pill">Jun 2025 — Present</span>
+          <article>
             <h3>Customer Service Executive <span>| Remox Currency Exchange</span></h3>
-            <p class="timeline-text">
-              Process foreign currency transactions and advise customers on exchange rates; maintained a clean cash-handling record across all shifts while managing high-volume periods.
-            </p>
+            <p>Jun 2025 — Present</p>
           </article>
-
-          <article class="timeline-card" data-timeline-zoom>
-            <span class="timeline-pill">Jul 2023 — Jun 2025</span>
+          <article>
             <h3>Team Member <span>| Pizza Hut & Noodle Box</span></h3>
-            <p class="timeline-text">
-              Balanced part-time work through two years of a full engineering degree, building strong time-management habits and reliability under competing deadlines.
-            </p>
+            <p>Jul 2023 — Jun 2025</p>
           </article>
         </div>
       </section>
 
       <section class="container section" id="volunteering">
         <h2>Volunteering & Leadership</h2>
-        <div class="volunteering-list">
-          <article class="volunteering-item">
-            <h3>Event Facilitator <span>| QUT Connect</span></h3>
-            <p>
-              Ran QUT 101 orientation for incoming students, guiding a full cohort through university systems and helping them settle in confidently.
-            </p>
-          </article>
-          <article class="volunteering-item">
-            <h3>Volunteer <span>| QUT Guild</span></h3>
-            <p>
-              Organised Welcome Week activities helping new students connect and feel at ease during their first days on campus.
-            </p>
-          </article>
-        </div>
+        <p>Event Facilitator — QUT Connect · Volunteer — QUT Guild.</p>
       </section>
 
       <section class="container section" id="contact">
         <h2>Contact</h2>
-        <p>If you’re building something thoughtful and useful, I’d like to hear about it.</p>
         <div class="hero-actions">
           <a class="button" href="https://github.com/AathmikaGK" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a class="button" href="https://www.linkedin.com/in/aathmika-gokula-krishna/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -161,14 +112,6 @@
     <footer class="container footer">
       <p>© <span id="year"></span> Aathmika Gokula Krishna</p>
     </footer>
-
-    <nav class="floating-nav" aria-label="Quick navigation">
-      <a class="floating-nav-item" href="#top" aria-label="Home">⌂ <span>Home</span></a>
-      <a class="floating-nav-item" href="#about">About</a>
-      <a class="floating-nav-item" href="#projects">Projects</a>
-      <a class="floating-nav-item" href="#journey">Journey</a>
-      <a class="floating-nav-item floating-nav-cta" href="#contact">Contact me</a>
-    </nav>
 
     <script src="script.js"></script>
   </body>

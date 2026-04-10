@@ -1,27 +1,48 @@
 const year = document.getElementById('year');
-const timelineItems = document.querySelectorAll('[data-timeline-zoom]');
+const viewport = document.getElementById('stack-viewport');
+const track = document.getElementById('stack-track');
 
-const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
-const activateTimelineZoom = (item, event) => {
-  const rect = item.getBoundingClientRect();
-  const pointerX = event.clientX - rect.left;
-  const normalized = clamp(pointerX / rect.width, 0, 1);
-  const edgeDistance = Math.abs(normalized - 0.5);
-  const intensity = 1 - edgeDistance * 2;
-  const zoom = (1 + intensity * 0.05).toFixed(3);
+if (viewport && track) {
+  const original = [...track.children].map((node) => node.cloneNode(true));
+  original.forEach((node) => track.appendChild(node));
 
-  item.style.setProperty('--zoom-factor', zoom);
-  item.classList.add('is-active');
-};
+  let speed = 0.6;
+  let x = -(track.scrollWidth / 4);
 
-timelineItems.forEach((item) => {
-  item.addEventListener('mousemove', (event) => activateTimelineZoom(item, event));
-  item.addEventListener('mouseenter', (event) => activateTimelineZoom(item, event));
-  item.addEventListener('mouseleave', () => {
-    item.style.setProperty('--zoom-factor', '1');
-    item.classList.remove('is-active');
+  const setDirectionFromPointer = (event) => {
+    const rect = viewport.getBoundingClientRect();
+    const pointerRatio = (event.clientX - rect.left) / rect.width;
+
+    if (pointerRatio > 0.7) {
+      speed = Math.min(2.2, 0.6 + (pointerRatio - 0.7) * 4.5);
+    } else if (pointerRatio < 0.3) {
+      speed = -Math.min(2.2, 0.6 + (0.3 - pointerRatio) * 4.5);
+    } else {
+      speed = speed >= 0 ? 0.6 : -0.6;
+    }
+  };
+
+  viewport.addEventListener('mousemove', setDirectionFromPointer);
+  viewport.addEventListener('touchmove', (event) => {
+    if (event.touches[0]) {
+      setDirectionFromPointer(event.touches[0]);
+    }
   });
-});
 
-year.textContent = new Date().getFullYear();
+  const animate = () => {
+    const halfWidth = track.scrollWidth / 2;
+    x += speed;
+
+    if (x <= -halfWidth) x += halfWidth;
+    if (x > 0) x -= halfWidth;
+
+    track.style.transform = `translateX(${x}px)`;
+    requestAnimationFrame(animate);
+  };
+
+  requestAnimationFrame(animate);
+}
