@@ -23,6 +23,12 @@ body {
   margin: 0 auto;
 }
 
+.landing {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -59,12 +65,13 @@ body {
 }
 
 .hero {
-  min-height: 62vh;
+  min-height: 0;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: end;
   gap: 1rem;
-  padding: 3rem 0 1.5rem;
+  padding: 3rem 0 1rem;
+  flex: 1;
 }
 
 .eyebrow {
@@ -89,6 +96,7 @@ body {
 
 .stack-loop {
   padding: 0.2rem 0 1rem;
+  margin-top: auto;
 }
 
 .stack-viewport {
@@ -173,6 +181,10 @@ body {
 }
 
 @media (max-width: 900px) {
+  .landing {
+    min-height: auto;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -184,15 +196,11 @@ body {
     max-width: 100%;
   }
 
-.timeline-pill {
-  display: inline-block;
-  margin-bottom: 0.55rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #fff;
-  background: linear-gradient(135deg, #7a2fff, #4f6cff);
-  border-radius: 999px;
-  padding: 0.28rem 0.72rem;
+  .project-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 2rem;
+  }
 }
 
 @media (max-width: 680px) {
@@ -214,4 +222,8 @@ body {
   .stack-chip {
     padding: 0.7rem 1.2rem;
   }
+}
+
+main > .section {
+  padding-top: 3rem;
 }
