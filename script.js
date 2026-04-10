@@ -1,42 +1,48 @@
-const root = document.documentElement;
-const themeToggle = document.getElementById('theme-toggle');
 const year = document.getElementById('year');
-const filterButtons = document.querySelectorAll('.filter-button');
-const projectCards = document.querySelectorAll('.project-card');
+const viewport = document.getElementById('stack-viewport');
+const track = document.getElementById('stack-track');
 
-const storedTheme = localStorage.getItem('theme');
-if (storedTheme === 'dark') {
-  root.setAttribute('data-theme', 'dark');
+if (year) {
+  year.textContent = new Date().getFullYear();
 }
 
-const applyToggleText = () => {
-  const darkModeEnabled = root.getAttribute('data-theme') === 'dark';
-  themeToggle.querySelector('.toggle-label').textContent = darkModeEnabled ? 'Light mode' : 'Dark mode';
-};
+if (viewport && track) {
+  const original = [...track.children].map((node) => node.cloneNode(true));
+  original.forEach((node) => track.appendChild(node));
 
-applyToggleText();
+  let speed = 0.6;
+  let x = -(track.scrollWidth / 4);
 
-themeToggle.addEventListener('click', () => {
-  const current = root.getAttribute('data-theme');
-  const nextTheme = current === 'dark' ? 'light' : 'dark';
-  root.setAttribute('data-theme', nextTheme);
-  localStorage.setItem('theme', nextTheme);
-  applyToggleText();
-});
+  const setDirectionFromPointer = (event) => {
+    const rect = viewport.getBoundingClientRect();
+    const pointerRatio = (event.clientX - rect.left) / rect.width;
 
-filterButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const selectedFilter = button.dataset.filter;
+    if (pointerRatio > 0.7) {
+      speed = Math.min(2.2, 0.6 + (pointerRatio - 0.7) * 4.5);
+    } else if (pointerRatio < 0.3) {
+      speed = -Math.min(2.2, 0.6 + (0.3 - pointerRatio) * 4.5);
+    } else {
+      speed = speed >= 0 ? 0.6 : -0.6;
+    }
+  };
 
-    filterButtons.forEach((item) => item.classList.remove('active'));
-    button.classList.add('active');
-
-    projectCards.forEach((card) => {
-      const stack = card.dataset.stack.split(' ');
-      const shouldShow = selectedFilter === 'all' || stack.includes(selectedFilter);
-      card.classList.toggle('hidden', !shouldShow);
-    });
+  viewport.addEventListener('mousemove', setDirectionFromPointer);
+  viewport.addEventListener('touchmove', (event) => {
+    if (event.touches[0]) {
+      setDirectionFromPointer(event.touches[0]);
+    }
   });
-});
 
-year.textContent = new Date().getFullYear();
+  const animate = () => {
+    const halfWidth = track.scrollWidth / 2;
+    x += speed;
+
+    if (x <= -halfWidth) x += halfWidth;
+    if (x > 0) x -= halfWidth;
+
+    track.style.transform = `translateX(${x}px)`;
+    requestAnimationFrame(animate);
+  };
+
+  requestAnimationFrame(animate);
+}

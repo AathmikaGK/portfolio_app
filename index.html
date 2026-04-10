@@ -1,131 +1,108 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Personal portfolio for a software engineer featuring selected projects and practical experience."
-    />
-    <title>Aathmika Gokula Krishna | Aspiring Software Engineer</title>
+    <meta name="description" content="Aathmika Gokula Krishna | Software Engineer Portfolio" />
+    <title>Aathmika Gokula Krishna | Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header" id="top">
-      <nav class="container nav">
-        <a class="brand" href="#top">Aathmika Gokula Krishna</a>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-          <span class="toggle-label">Dark mode</span>
-        </button>
+    <header class="site-nav container" id="top">
+      <a class="brand" href="#top">Aathmika Gokula Krishna</a>
+      <nav class="top-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
       </nav>
+      <a class="nav-cta" href="#contact">Contact</a>
     </header>
 
     <main>
-      <section class="hero container">
-        <p class="eyebrow">Software Engineering Student</p>
-        <h1>Building AI-integrated systems and cloud-native infrastructure.</h1>
-        <p class="hero-copy">
-          Third-year Software Engineering student at QUT. I bridge the gap between backend architecture and adaptive AI integration
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projects">View projects</a>
-          <a class="button" href="#contact">Get in touch</a>
-        </div>
+      <section class="landing container">
+        <section class="hero">
+          <div>
+            <p class="eyebrow">Hi, I build reliable systems and practical AI products.</p>
+            <h1>Software<br />Engineer</h1>
+          </div>
+          <p class="hero-note">
+            I design and ship backend-first products with cloud-native architecture, AI integrations, and scalable APIs.
+          </p>
+        </section>
+
+        <section class="stack-loop" aria-label="Tech stack loop">
+          <div class="stack-viewport" id="stack-viewport">
+            <div class="stack-track" id="stack-track">
+              <span class="stack-chip">Python</span>
+              <span class="stack-chip">Java</span>
+              <span class="stack-chip">C#</span>
+              <span class="stack-chip">LangChain</span>
+              <span class="stack-chip">RAG</span>
+              <span class="stack-chip">AWS</span>
+              <span class="stack-chip">Docker</span>
+              <span class="stack-chip">Git</span>
+              <span class="stack-chip">FastAPI</span>
+            </div>
+          </div>
+        </section>
       </section>
 
       <section class="container section" id="about">
         <h2>About</h2>
         <p>
-          I specialise in cloud-native systems, AI/ML, and full-stack development. Built and deployed production-grade projects using Python, LangChain, AWS, Java, and FastAPI.
+          Third-year Software Engineering student at QUT, focused on backend systems, AI/ML integration, and clean full-stack delivery.
         </p>
       </section>
 
       <section class="container section" id="projects">
-        <div class="section-header">
-          <h2>Selected projects</h2>
-          <p>Filter by stack:</p>
-        </div>
-        <div class="filters" role="group" aria-label="Project filters">
-          <button class="filter-button active" data-filter="all">All</button>
-          <button class="filter-button" data-filter="ai">AI</button>
-          <button class="filter-button" data-filter="api">API</button>
-          <button class="filter-button" data-filter="python">Python</button>
-          <button class="filter-button" data-filter="javascript">JavaScript</button>
-        </div>
-
-        <div class="project-grid" id="project-grid">
-          <!--
-            Add each project's GitHub URL to the "View on GitHub" button href below.
-            For new projects, copy a full <article class="project-card"> block and update the button link.
-          -->
-          <article class="project-card" data-stack="AI Python Typescript Langchain RAG">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <article>
             <h3>AI Planner & Learning Assistant</h3>
-            <p>
-              A RAG-based chatbot designed to answer questions based on the learning materials uploaded by the user.
-            </p>
-            <ul>
-              <li>Natural language planning flow</li>
-              <li>Progress dashboard with daily focus blocks</li>
-              <li>Reminder system with practical feedback loops</li>
-            </ul>
-            <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <p>RAG chatbot for course-material grounded Q&A and study planning.</p>
           </article>
-
-          <article class="project-card" data-stack="API Python AWS">
+          <article>
             <h3>Video to Audio Transcoder API</h3>
-            <p>
-              REST API that receives video uploads, extracts audio, and returns downloadable files with job tracking.
-            </p>
-            <ul>
-              <li>Asynchronous processing queue</li>
-              <li>Rate limiting and signed file URLs</li>
-              <li>Structured logging and health checks</li>
-            </ul>
-            <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <p>Async upload/transcode API with tracking and secured file delivery.</p>
           </article>
-
-          <article class="project-card" data-stack="Java AI ">
+          <article>
             <h3>Quiz Master</h3>
-            <p>
-              Lightweight quiz platform for timed rounds, instant scoring, and topic-based question sets.
-            </p>
-            <ul>
-              <li>Live score updates</li>
-              <li>Learboard</li>
-              <li>AI poweres quiz creation tool</li>
-            </ul>
-            <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </article>
-
-          <article class="project-card" data-stack="AI API Python FastAPI Bootstrap">
-            <h3>Safeguard AI — Tanda Hackathon</h3>
-            <p>
-              Python · FastAPI · Bootstrap 5 · Anthropic Claude API
-            </p>
-            <ul>
-              <li>Built and demoed a prompt-injection scanner in 24 hours.</li>
-              <li>A single POST request returns a risk score out of 100, flagged issues, and a rewritten safe prompt via the Claude API.</li>
-              <li>Learned the API under time pressure and shipped a working demo on the day.</li>
-            </ul>
-            <a class="button" href="#" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <p>Timed quiz platform with scoring and AI-powered quiz generation.</p>
           </article>
         </div>
       </section>
 
+      <section class="container section" id="journey">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+          <article>
+            <h3>Private Freelance Tutor <span>| SuperProf</span></h3>
+            <p>Jan 2024 — Present</p>
+          </article>
+          <article>
+            <h3>Customer Service Executive <span>| Remox Currency Exchange</span></h3>
+            <p>Jun 2025 — Present</p>
+          </article>
+          <article>
+            <h3>Team Member <span>| Pizza Hut & Noodle Box</span></h3>
+            <p>Jul 2023 — Jun 2025</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section" id="volunteering">
+        <h2>Volunteering & Leadership</h2>
+        <p>Event Facilitator — QUT Connect · Volunteer — QUT Guild.</p>
+      </section>
+
       <section class="container section" id="contact">
         <h2>Contact</h2>
-        <p>If you’re building something thoughtful and useful, I’d like to hear about it.</p>
         <div class="hero-actions">
           <a class="button" href="https://github.com/AathmikaGK" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a class="button" href="https://www.linkedin.com/in/aathmika-gokula-krishna/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -137,13 +114,6 @@
     <footer class="container footer">
       <p>© <span id="year"></span> Aathmika Gokula Krishna</p>
     </footer>
-
-    <nav class="floating-nav" aria-label="Quick navigation">
-      <a class="floating-nav-item" href="#top" aria-label="Home">⌂ <span>Home</span></a>
-      <a class="floating-nav-item" href="#about">About</a>
-      <a class="floating-nav-item" href="#projects">Portfolio</a>
-      <a class="floating-nav-item floating-nav-cta" href="#contact">Contact me</a>
-    </nav>
 
     <script src="script.js"></script>
   </body>
