@@ -120,6 +120,11 @@ section,
   padding: 2.2rem 0;
 }
 
+#journey {
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+}
+
 .section h2 {
   margin-top: 0;
   margin-bottom: 0.8rem;
@@ -147,11 +152,11 @@ section,
 }
 
 .project-card {
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 1rem;
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  border: 0;
+  border-radius: 0;
+  padding: 1rem 0;
+  background: transparent;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
 }
@@ -159,7 +164,6 @@ section,
 .project-card:hover,
 .project-card:focus-within {
   transform: translateY(-2px);
-  border-color: var(--accent);
 }
 
 .project-card h3 {
@@ -187,7 +191,7 @@ section,
   position: relative;
   margin-top: 1.4rem;
   display: grid;
-  gap: 1.1rem;
+  gap: 1.8rem;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -204,13 +208,13 @@ section,
 
 .timeline-card {
   --zoom-factor: 1;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 1rem;
-  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  border: 0;
+  border-radius: 0;
+  padding: 1rem 0;
+  background: transparent;
   position: relative;
   transform: scale(var(--zoom-factor));
-  box-shadow: var(--shadow);
+  box-shadow: none;
 }
 
 .timeline-card:nth-child(odd) {
@@ -269,8 +273,8 @@ section,
 }
 
 .timeline-card.is-active {
-  border-color: var(--accent);
-  box-shadow: var(--glow);
+  border: 0;
+  box-shadow: none;
 }
 
 .timeline-card.is-active .timeline-text {
@@ -285,10 +289,11 @@ section,
 }
 
 .volunteering-item {
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 0.95rem 1rem;
-  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  border: 0;
+  border-radius: 0;
+  padding: 0.95rem 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .volunteering-item h3 {
